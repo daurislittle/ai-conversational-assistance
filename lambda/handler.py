@@ -88,8 +88,8 @@ def lambda_handler(event, context):
             return build_response({"error": "Something went wrong. Our team has been notified."}, 500)
         
 def parse_request(event) -> dict:
-    
-    return {}
+    body = json.loads(event.get("body", "{}"))
+    return body or {}
 
 def get_system_prompt() -> str:
     pass
