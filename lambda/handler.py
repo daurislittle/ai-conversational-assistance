@@ -92,7 +92,15 @@ def parse_request(event) -> dict:
     return body or {}
 
 def get_system_prompt() -> str:
-    pass
+    return """
+    You are a helpful assistant.
+    
+    Guidelines:
+    - Be concise and clear in your responses.
+    - Provide helpful and accurate information.
+    - Avoid unnecessary repetition.
+    - Maintain a polite and professional tone.
+    """
 
 def build_response(request: dict, status_code: int) -> dict:
     return {
