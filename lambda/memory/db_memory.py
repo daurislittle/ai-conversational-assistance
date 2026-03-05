@@ -13,6 +13,9 @@ MAX_MESSAGES = 20
 MAX_TOKENS = 1000
 TTL_SECONDS = 5000
 
+
+##This module should handle all db operations related to conversational sessions
+#Note: DB TTL deletion isn't immediate; items may persist slightly longer, but the application should handle expired items appropriately.
 def save_message(session_id: str, role: str, message: str, tokens: int = 0) -> None:
     """
     Save a message to the DynamoDB table for a given session.
